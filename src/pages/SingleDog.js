@@ -9,7 +9,7 @@ export default function SingleDog() {
     const fetchSingleDogData = async () => {
       try {
         const res = await fetch(
-          ` https://api.thecatapi.com/v1/images/search?breed_ids=beng`
+          `https://api.thedogapi.com/v1/breeds/search?q=${name}`
         )
         const data = await res.json()
         setDog(data)
@@ -32,7 +32,7 @@ export default function SingleDog() {
           >
             <article>
               <img
-                src={`https://api.thecatapi.com/v1/images/search`}
+                src={`https://cdn2.thedogapi.com/images/${item.reference_image_id}.jpg`}
                 alt={item.name}
               />
             </article>
